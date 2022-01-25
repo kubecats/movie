@@ -1,0 +1,26 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+  labels:
+    app: frontend
+spec:
+  containers:
+  - name: frontend
+    image: wbyjt11/frontend
+  terminationGracePeriodSeconds: 0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-frontend
+spec:
+  ports:
+    - name: svc-frontend
+      port: 9000
+      targetPort: 80
+  selector:
+    app: frontend
+  type: NodePort
+

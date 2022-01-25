@@ -1,9 +1,8 @@
 FROM python:3
 
-COPY . /app
+COPY . /
 
-WORKDIR /app
-#RUN pip3 install flask 
+WORKDIR /
 
 RUN pip install -r requirements.txt
 

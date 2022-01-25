@@ -31,32 +31,74 @@ class movies(Resource):
         'movie_info': movie_info
     }
 
+
 @ns_movies.route('/movies/<string:title>')
-class movie_title_model(Resource):
+class movies_title(Resource):
+
   def get(self, title):
+    if not title in movie_info.keys():
+      abort(404, description=f"title {title} doesn't exist")
+    data = movie_info[title]
+
+    return {
+        'number_of_movies': len(data.keys()),
+        'data': data
+    }
+
+  def post(self, title):
+    if title in movie_info.keys():
+      abort(409, description=f"title {title} already exists")
+
+    movie_info[title] = dict()
+    return Response(status=201)
+
+  def delete(self, title):
     if not title in movie_info.keys():
       abort(404, description=f"title {title} doesn't exists")
 
+    del movie_info[title]
+    return Response(status=200)
+
+
+  def put(self, title):
+    # todo
+    return Response(status=200)
+
+@ns_movies.route('/movies/<string:title>/<int:movie_id>')
+class movie_title_model(Resource):
+  def get(self, title, movie_id):
+    if not title in movie_info.keys():
+      abort(404, description=f"title {title} doesn't exists")
+    if not movie_id in movie_info[title].keys():
+      abort(404, description=f"Movie ID {title}/{movie_id} doesn't exists")
+
     return {
-        'data': movie_info[title]
+        'movie_id': movie_id,
+        'data': movie_info[title][movie_id]
     }
 
   @api.expect(movie_data) # body
-  def post(self, title):
+  def post(self, title, movie_id):
+    if not title in movie_info.keys():
+      abort(404, description=f"title {title} doesn't exists")
+    if movie_id in movie_info[title].keys():
+      abort(409, description=f"Movie ID {title}/{movie_id} already exists")
 
     params = request.get_json() # get body json
-    movie_info[title] = params
+    movie_info[title][movie_id] = params
     global number_of_movies
     number_of_movies += 1
   
     return Response(status=200)
   
   
-  def delete(self, title):
+  def delete(self, title, movie_id):
     if not title in movie_info.keys():
       abort(404, description=f"title {title} doesn't exists")
+    if not movie_id in movie_info[title].keys():
+      abort(404, description=f"Movie ID {title}/{movie_id} doesn't exists")
 
-    del movie_info[title]
+    del movie_info[title][movie_id]
     global number_of_movies
     number_of_movies -= 1
 
@@ -64,17 +106,19 @@ class movie_title_model(Resource):
 
 
   @api.expect(movie_data)
-  def put(self, title):
+  def put(self, title, movie_id):
     global movie_info
 
     if not title in movie_info.keys():
       abort(404, description=f"title {title} doesn't exists")
+    if not movie_id in movie_info[title].keys():
+      abort(404, description=f"Movie ID {title}/{movie_id} doesn't exists")
     
     params = request.get_json()
-    movie_info[title] = params
+    movie_info[title][movie_id] = params
     
     return Response(status=200)
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=80)
+    app.run(debug=True, host='0.0.0.0', port=90)

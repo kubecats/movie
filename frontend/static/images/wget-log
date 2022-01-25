@@ -1,0 +1,15 @@
+--2022-01-25 04:56:21--  https://www.facebook.com/TitanicMovie/photos/a.279117218774413/3541976375821798/?__cft__[0]=AZWP-RoJDAhfVHtWJ1gUjzlee9l1UwnKWIJ32PautN7m9bzZv-MwHytBBjdv3Pu7ycINM3hMD51z1jkDdqNQbz7IFZZGJm-Aqp-dtq4S6cxstPJ9Eg8Rbfns8cRTrTpQyOxSYRMX1nIuBZXdqTYocWnr
+Resolving www.facebook.com (www.facebook.com)... 157.240.215.35, 2a03:2880:f156:82:face:b00c:0:25de
+Connecting to www.facebook.com (www.facebook.com)|157.240.215.35|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://www.facebook.com/unsupportedbrowser [following]
+--2022-01-25 04:56:21--  https://www.facebook.com/unsupportedbrowser
+Reusing existing connection to www.facebook.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘index.html?__cft__[0]=AZWP-RoJDAhfVHtWJ1gUjzlee9l1UwnKWIJ32PautN7m9bzZv-MwHytBBjdv3Pu7ycINM3hMD51z1jkDdqNQbz7IFZZGJm-Aqp-dtq4S6cxstPJ9Eg8Rbfns8cRTrTpQyOxSYRMX1nIuBZXdqTYocWnr’
+
+                    index.html?__cft__[     [<=>                                                                           ]       0  --.-KB/s               index.html?__cft__[0]=AZWP-RoJDAhfVHtWJ     [ <=>                                                                          ]  56.59K  --.-KB/s    in 0.07s   
+
+2022-01-25 04:56:22 (769 KB/s) - ‘index.html?__cft__[0]=AZWP-RoJDAhfVHtWJ1gUjzlee9l1UwnKWIJ32PautN7m9bzZv-MwHytBBjdv3Pu7ycINM3hMD51z1jkDdqNQbz7IFZZGJm-Aqp-dtq4S6cxstPJ9Eg8Rbfns8cRTrTpQyOxSYRMX1nIuBZXdqTYocWnr’ saved [57951]
+

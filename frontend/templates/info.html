@@ -1,23 +1,159 @@
 <!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>영화이름: evil dead 2013</h1>
-    <h2>《이블 데드》(영어: Evil Dead)는 2013년 공개된 미국의 공포 영화이다.<br>
-        샘 레이미의 동명 영화를 바탕으로 페데 알바레스 감독이 리메이크하였다.</h2>
-      <h3>주연명단
-제인 레비
-실로 페르난데즈
-제시카 루카스
-루 테일러 푸치
-엘리자베스 블랙모어
-      </h3>
-       <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Mountains" style="width:20%">
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset='utf-8'>
+	<title>Detail of Movie</title>
+	<style>
+	 body{
+	 	background-color: black;
+		font-family: Sans-serif;
+	 	}
 
-  </body>
+	 h1{
+	 	color: green;
+	 	text-align: center;
+		font-family: Sans-serif;
+	 }
+	 nav{
+	 	color: green;
+	 
+	 }
+
+	 p1{
+	 	text-align: center;
+	 	color: green;
+	 }
+	 p3{
+	 	text-align: center;
+	 	padding-top: 250px;
+	 	color: green;
+	 }
+	 .c2{
+	 	padding-top: 100px;
+	 }
+ 
+.upspace{
+	padding-top: 150px;
+}
+.card{
+
+	align-content: center;
+	border-radius: 50%;
+	pa
+}
+
+.container {
+  position: relative;
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  border-radius: 70%
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 70%
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: green;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+  border-radius: 70%
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: green;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+
+}
+
+
+li a:hover {
+  background-color: White;
+
+}		
+	</style>
+	
+<img src="{{ url_for('static', filename='images/0.png') }}" />
+
+</head>
+
+<body>
+	<hr/>
+	<nav>
+
+	<ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="https://api.whatsapp.com/send?phone=+918788887373&text=please%20add%20the%20movie">Request movie</a></li>
+  <li><a href="https://api.whatsapp.com/send?phone=+918788887373&text=want%20to%20contact%20you">Contact</a></li>
+  <li><a href="/about">About</a></li>
+   </ul>
+  <hr/>
+</nav>
+
+<br>
+<br>
+<br>
+<center>
+<h1>The title of the movie is <span style="color:red; font-weight:bold"> {{h_title}}</span> 😄</h1>
+<h1>This film is produced in the <span style="color:orange"> {{h_country}} </span>😄 </h1>
+<h1>The genre of the movie is <span style="color:yellow"> {{h_genre}}</span> 😄 </h1>
+<h1>The production year of the movie is  <span style="color:green"> {{h_year}} </span>😄 </h1>
+<h1>The movie has a rating of <span style="color:blue"> {{h_rate}} points </span> 😄 </h1>
+
+</center>
+
+<center class="c2">
+	<p3>Made with 💙 by lhs </p3>
+</center>
+
+<a href="assets/1.jpg" download>
+
+	
+		
+
+</body>
 </html>

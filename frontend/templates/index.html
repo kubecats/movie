@@ -11,7 +11,7 @@
       rel="stylesheet"
       href="{{url_for('static', filename='style.css')}}" />
 
-<img src="{{ url_for('static', filename='images/1.png') }}" />
+<img src="{{ url_for('static', filename='images/0.png') }}" />
     
 <script
       type="text/javascript"
@@ -55,9 +55,9 @@
 <a href="movies/Evil Dead 2013.mp4" download><div class="row">
   <div class="column nature">
     <div class="content">
-        <a href = "{{url_for('info')}}">
-          <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Mountains" style="width:100%">
-          <h4>Evil Dead 2013</h4>
+        <a href = "{{url_for('info', titles='titanic')}}">
+          <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Titanic" style="width:100%">
+          <h4>The Titanic 1997</h4>
         </a>
     </div>
     </a>
@@ -65,15 +65,17 @@
   <a href="movies/Annabelle Creation (2017).mkv" download>
   <div class="column nature">
     <div class="content">
-      <img src="{{ url_for('static', filename='images/2.jpg') }}" alt="Lights" style="width:100%">
-      <h4>Annabelle Creation (2017)</h4>
+        <a href = "{{url_for('info', titles='kingsman')}}">
+      <img src="{{ url_for('static', filename='images/2.png') }}" alt="Lights" style="width:100%">
+      <h4>The Kingsman (2020)</h4>
     </div>
   </div>
   <a href="movies/Insidious The Last Key (2018).mkv" download>
   <div class="column nature">
     <div class="content">
+        <a href = "{{url_for('info', titles='batman')}}">
       <img src="{{ url_for('static', filename='images/3.jpg') }}" alt="Nature" style="width:100%">
-      <h4>Insidious The Last Key (2018)</h4>
+      <h4>The Dark Knight (2008)</h4>
     </div>
   </div>
 <a href="movies/The Conjuring 2 2016.mkv" download>
